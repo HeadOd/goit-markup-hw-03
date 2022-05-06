@@ -33,6 +33,9 @@
     /* btn */
     --button-color: #2196F3;
     --button-hover: #188CE8;
+
+    /* solid */
+    --header-solid: #ececec;
 }
 
 /* body */
@@ -46,11 +49,80 @@ body {
     letter-spacing: 0.03em;
 }
 
+h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+    /* чомусь в мене був у ul - padding-inline-start: 40px; не пам'ятаю, щоб ми його на занятты прибирали  */
+}
+
+img {
+    display: block;
+}
+
 .list {
     list-style: none;
 }
+
+.container {
+    width: 1200px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* index.html */
+
 /* header */
+
+.page-header {
+    border-bottom: 1px solid var(--header-solid);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav > .list {
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.header-address {
+    display: flex;
+    margin-left: auto;
+}
+
+.site-nav .logo {
+    margin-right: 93px;
+}
+
+.header-list .item,
+.header-address .link {
+    margin-right: 50px;
+}
+
+.header-list .item:last-child,
+.header-address .link:last-child {
+    margin-right: 0;
+}
+
+.header-list .link,
+.header-address .link,
+.site-nav .logo {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
 
 /* logo */
 .logo {
@@ -87,12 +159,19 @@ body {
 }
 
 /* hero */
+.hero .container {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
 .hero {
     background-color: var(--hero-bgc);
     text-align: center;
 }
 
 .hero-title {
+    margin-bottom: 13px;
+    
     color: var(--main-bgc);
     font-weight: 900;
     font-size: 44px;
@@ -122,7 +201,30 @@ body {
 }
 
 /* our advantages */
+.our-advantages .container {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.section-title-hidden {
+    display: none;
+}
+
+.advantages {
+    display: flex;
+}
+
+.advantages .item {
+    margin-right: 30px;
+}
+
+.advantages .item:last-child {
+    margin-right: 0;
+}
+
 .advantages .title {
+    margin-bottom: 10px;
+
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -131,6 +233,8 @@ body {
 }
 
 .section-title {
+    margin-bottom: 50px;
+
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
@@ -138,12 +242,52 @@ body {
     color: var(--title-text-color);
 }
 
+/* what are we do */
+.what-do .container {
+    padding-bottom: 94px;
+}
+
+.what-are-we {
+    display: flex;
+}
+
+
+ .what-are-we .item {
+    margin-right: 30px;
+}
+
+.what-are-we .item:last-child {
+    margin-right: 0;
+}
+
 /* our team */
+.our-team .container {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
+.our-team-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.our-team-list .item {
+    margin-right: 30px;
+}
+
+.our-team-list .item:last-child {
+    margin-right: 0;
+}
+
 .our-team {
     background-color: var(--second-bgc);
 }
 
 .our-team-title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+
+    text-align: center;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
@@ -151,16 +295,33 @@ body {
 }
 
 .position {
+    margin-bottom: 30px;
+
+    text-align: center;
     line-height: 1.19;
 }
 
 /* footer */
+
+.footer .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
 .footer {
     background-color: var(--footer-bgc);
 }
 
+.footer .logo {
+    margin-bottom: 20px;
+}
+
 .logo-white {
     color: var(--color-logo-white);
+}
+
+.footer-address .fact-address {
+    margin-bottom: 10px;
 }
 
 .offline-address {
@@ -172,11 +333,13 @@ body {
 }
 /* portfolio.html */
 
+.our-work-section .container {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+
 /* btn */
-/* из-за параметров box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-border-radius: 4px;
-решил создать новый класc btn */
-/* :hover и :focus указал вместе с классом button выше */
+/* :hover и :focus зазначав разом з класом button вище */
 .btn {
     font-family: var(--main-font),
     sans-serif;
@@ -194,8 +357,58 @@ border-radius: 4px;
     background: var(--button-color);
 }
 
+.btn-menu .list {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-menu {
+    margin-bottom: 50px;
+}
+
+.list-btn-menu .item {
+    margin-right: 8px;
+}
+
+.list-btn-menu .item:last-child {
+    margin-right: 0;
+}
+/* our-work */
+/* Якщо я робив так, то в мене всеодно видавлювало в футер 30px, хоча в дев тулзах наче все працювало, чому так?
+.our-work {
+    margin-right: -30px;
+    margin-bottom: -30px;
+}
+
+.our-work .item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+} */
+
+.our-work{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.our-work .item {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--header-solid);
+}
+
+.our-work .item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.our-work .item:nth-last-child(-n + 3) {
+    margin-bottom: 0;
+}
+
 /* title */
 .our-work .title {
+    margin-top: 20px;
+    margin-bottom: 4px;
+
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
@@ -205,6 +418,8 @@ border-radius: 4px;
 
 /* p */
 .our-work .paragraph {
+    margin-bottom: 20px;
+
     font-size: 16px;
     line-height: 1.88;
 }
